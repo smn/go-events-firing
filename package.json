@@ -1,7 +1,7 @@
 {
-  "name": "go-kv-store",
+  "name": "go-events-firing",
   "version": "0.0.1",
-  "description": "A example Vumi Go USSD application using the key value store.",
+  "description": "A example Vumi Go USSD application firing events.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/smn/go-kv-store"
+    "url": "git://github.com/smn/go-events-firing"
   },
   "keywords": [
     "vumi",

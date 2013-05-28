@@ -1,4 +1,5 @@
-go-kv-store
-===========
+go-events-firing
+================
 
-Example of how to use Go's key value store from Javascript.
+Example of how to use Go's fire events from the JS Sandbox. These
+are generally captured in Graphite.

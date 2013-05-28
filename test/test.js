@@ -1,1 +1,1 @@
-require("./test-go-kv-store.js");
+require("./test-go-events-firing.js");
