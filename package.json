@@ -14,7 +14,7 @@
     "mocha": "~1.7.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -R spec --watch"
   },
   "repository": {
     "type": "git",

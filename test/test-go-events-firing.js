@@ -17,7 +17,7 @@ describe("test api", function() {
     });
 });
 
-describe("Key Value store application", function() {
+describe("Event firing key value store application", function() {
 
     var tester = new vumigo.test_utils.ImTester(app.api, {
         async: true
@@ -34,4 +34,18 @@ describe("Key Value store application", function() {
         p.then(done, done);
     });
 
+    it('should fire an event on session completion', function(done) {
+        var p = tester.check_state({
+            user: null,
+            content: null,
+            next_state: 'done',  // it's only 1 state that we return to,
+            response: 'You are visitor number 1',
+            continue_session: false
+        }).then(function() {
+            var metrics_store = app.api.metrics['app-metrics'];
+            var metric = metrics_store['number-of-users'];
+            assert.equal(metric.agg, 'max');
+            assert.deepEqual(metric.values, [1]);
+        }).then(done, done);
+    });
 });
